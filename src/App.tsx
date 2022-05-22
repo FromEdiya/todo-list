@@ -1,6 +1,8 @@
 import React, { FC } from 'react';
 import { Route, Routes } from 'react-router-dom';
 import About from './pages/About';
+import Article from './pages/Article';
+import Articles from './pages/Articles';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 
@@ -10,6 +12,9 @@ const App: FC = () => {
       <Route path="/" element={<Home />} />
       <Route path="/about" element={<About />} />
       <Route path="/profiles/:username" element={<Profile />} />
+      <Route path="/articles" element={<Articles />}>
+        <Route path=":id" element={<Article />} />
+      </Route>
     </Routes>
   );
 };
