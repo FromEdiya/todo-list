@@ -6,12 +6,12 @@ const About = () => {
   const mode = searchParams.get('mode') as string;
 
   const onToggleDetail = () => {
-    setSearchParams({ mode, detail: detail === 'true' ? false : true });
+    setSearchParams({ mode, detail: detail === 'true' ? 'false' : 'true' });
   };
 
   const onIncreaseMode = () => {
     const nextMode = mode === null ? 1 : parseInt(mode) + 1;
-    setSearchParams({ mode: nextMode, detail });
+    setSearchParams({ mode: String(nextMode), detail });
   };
 
   return (
